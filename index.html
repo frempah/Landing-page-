@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frempah Brand Landing Page</title>
+    <link rel="stylesheet" href="landingpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">frempahBrand</div>
+
+        <nav class="nav" id="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Beautiful websites with FrempahBrand.</h1>
+            <p>Always Make sure you have value to put on the table and you wont be easily discared.</p>
+            <button>Range Wont Roll Us Over.</button>
+        </div>
+
+        <div class="hero-image">
+            <img src="IMG_3557.JPG" alt="Hero image">
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>Fast</h3>
+            <p>Quick to build, easy to deploy.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Responsive</h3>
+            <p>Looks great on all devices.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Modern</h3>
+            <p>Uses clean, modern CSS layout techniques.</p>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta">
+        <h2>Ready to build your next website?</h2>
+        <p>Join frempahBrand to start learning and creating stunning web layouts today.</p>
+        <button>Get Started</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© <span id="year"></span> <span >frempahBrand</span> All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Automatically update the year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- SCRIPT -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.hero-text, .hero-image, .feature-box');
+
+        window.addEventListener('scroll', () => {
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('reveal');
+                }
+            });
+        });
+    </script>
+
+    <!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">↑</button>
+
+<script>
+  // Show or hide the button when scrolling
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top when clicked
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+   
+</body>
+</html>
